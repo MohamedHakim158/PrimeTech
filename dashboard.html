@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+/>
+<script src="script.js"></script>
+
+</head>
+<body>
+    
+    <main class="main">
+        <aside class="aside">
+            <a class="primetech-logo" href="#">
+                Prime<span>Tech</span>
+            </a>
+            <ul>
+                <li><i class="fas fa-home"></i>Dashboard</li>
+                <li><i class="fas fa-box"></i>Products</li>
+                <li><i class="fas fa-shopping-cart"></i>Orders</li>
+                <li><i class="fas fa-user"></i>Admins</li>
+                <li><i class="fas fa-cog"></i>Settings</li>
+            </ul>
+        </aside>
+        <aside class="content">
+            <header class="header">
+                <i class="fa-solid fa-bars" style="color: #f9fafa;"></i>
+                <div class="right">
+                    <img src="c:\Users\Mohamed Hakim\Pictures\my photo.jpg" alt="profile Pictures">
+                    <span class="name">Mohamed<span class="separate">|</span></span>
+                    <span class="role">Admin</span>
+                </div>
+            </header>
+            <article class="article">
+               <h2>Welcome Back, <span id="adminName">Mohamed</span></h2>
+               <p>Dashboard &nbsp; <span class="branch">Dashboard</span></p>
+               <section class="totals">
+                <div class="left">
+                    <div class="left">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <div class="mid">
+                        <p>Products</p>
+                        <p class="totalProducts">120</p>
+                    </div>
+                    <div class="right">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+                <div class="mid">
+                    <div class="left"><i class='fas fa-cart-arrow-down'></i></div>
+                    <div class="mid"></div>
+                    <div class="right"></div>
+                </div>
+                <div class="right">
+                    <div class="left"><i class="fa-solid fa-sack-dollar"></i></div>
+                </div>
+               </section>
+
+               <section class="second">
+                    <div class="recent">
+                        <header class="ordHead">
+                            <p>Recent Orders</p>
+                            <button type="button">View All &nbsp;></button>
+                        </header>
+                        <table >
+                            <thead>
+                               <tr >
+                                 <td>Id</td>
+                                <td>Customer</td>
+                                <td>Date</td>
+                                <td>status</td>
+                                <td>Total</td>  
+                               </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1001</td>
+                                    <td>John Doe</td>
+                                    <td>2026-01-10</td>
+                                    <td class="status">Completed</td>
+                                    <td><button class="view-btn">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#1002</td>
+                                    <td>Jane Smith</td>
+                                    <td>2026-01-11</td>
+                                    <td class="status">Pending</td>
+                                    <td><button class="view-btn">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#1003</td>
+                                    <td>Michael Brown</td>
+                                    <td>2026-01-12</td>
+                                    <td class="status">Cancelled</td>
+                                    <td><button class="view-btn">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#1004</td>
+                                    <td>Emily Davis</td>
+                                    <td>2026-01-13</td>
+                                    <td class="status">Completed</td>
+                                    <td><button class="view-btn">View</button></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="adminManagement">
+                         <header class="adminHead">
+                            <p>Admin Mangement</p>
+                            <button type="button">Add New Admin</button>
+                        </header>
+                        <table >
+                            <thead>
+                               <tr >
+                                 <td>Admin</td>
+                                <td>Role</td>
+                                <td>Action</td> 
+                               </tr>
+                            </thead>
+                            <tbody>
+                                 <tr>
+                                    <td>John Doe</td>
+                                    <td>Super Admin</td>
+                                    <td class="edit"><i class="fas fa-pen"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Jane Smith</td>
+                                    <td>Editor</td>
+                                    <td class="edit"><i class="fas fa-pen"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Michael Brown</td>
+                                    <td>Moderator</td>
+                                    <td class="edit"><i class="fas fa-pen"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Emily Davis</td>
+                                    <td>Viewer</td>
+                                    <td class="edit"><i class="fas fa-pen"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+               </section>
+            </article>
+        </aside>
+    </main>
+
+
+
+
+
+    <script>
+        var statusArr = document.getElementsByClassName("status");
+        
+        Array.from(statusArr).forEach(element => {
+            if (element.textContent === "Completed") {
+                element.classList.add('completed');
+            }
+            else if (element.textContent === "Pending"){
+                element.classList.add('pending');
+            }
+            else {
+                element.classList.add("cancelled");
+            }
+        });
+    </script>
+</body>
+</html>

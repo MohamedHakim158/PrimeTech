@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./Images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: "Segoe UI", sans-serif;
+}
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: max-content;
+    padding: 2%;
+}
+.aside {
+    position: sticky;     
+    top: 0;               
+    left: 0;              
+    min-width: 15%;           
+    padding: 10px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    border-top-left-radius: 8px;
+    flex-shrink: 0;       
+    min-width: max-content;
+}
+
+.primetech-logo {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
+  cursor: pointer;
+}
+
+.primetech-logo span {
+  color: #0a84ff;   
+}
+
+.primetech-logo {
+    color: white;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+.primetech-logo:hover {
+    color: #1abc9c;
+    transform: scale(1.05);
+    text-shadow:
+    0 0 5px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(10,132,255,0.4),
+    0 0 20px rgba(129, 155, 180, 0.6);
+}
+
+.aside ul {
+    list-style: none;
+    background-color:#0F172A;
+    color: #94A3B8;
+    opacity: .5;
+    height: 92vh;
+    margin: 10px;
+    transition: all .3s ease;
+    margin-top: 10px;
+    border-top-left-radius: 8px;
+}
+.aside > ul{
+    margin: 10px; 
+    list-style: none;
+    width: 100%;
+    padding: 10px;
+}
+.aside ul li {
+    padding: 1vh;
+    margin-bottom: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.aside ul li i {
+    padding-right: 20px;
+}
+.aside > ul li:hover {
+    background-color: rgba(10, 132, 255, 0.8);
+    color: #fff;
+}
+.aside ul li i {
+    margin-right: 10%;
+    width: 20px;
+    transition: color .3s ease;
+}
+
+
+.content {
+    flex: 1;
+    margin-top: 10px;    
+}
+.header {
+    width: 100%;
+    position: relative;
+    background-color: #1a2744;
+    opacity: .8;
+    height: 8%;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    border-top-right-radius: 20px;
+
+}
+.header i {
+    font-size: 30px;
+    cursor: pointer;
+    float: left;
+    padding: 3vh;
+}
+.header .right {
+    margin-left: auto;   
+    display: flex;
+    align-items: center;
+    color: rgb(255, 251, 251);
+    font-weight: bold;
+}
+
+.header .right img {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 5px;
+    
+}
+.header .right .name {
+    vertical-align: calc(100%);
+}
+.header .right .role {
+    vertical-align: calc(100%);
+    margin-right: 2vw;
+}
+.header .right .name .separate{
+   margin-left: 3px;
+   color: #1abc9c;
+   font-size: 20px;
+}
+.article {
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 90%;
+    padding: 2vw;
+}
+.article > h2 {
+    padding-bottom: 10px;
+}
+.article p .branch {
+    font-weight: 100;
+    margin-left: 10px;
+    color: gray;
+}
+
+.article .totals {
+    height: 200px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+.totals .left , .mid {
+    min-width:  25%;
+    background-color: rgb(253, 248, 248);
+    padding: 20px;
+    padding-top:25px;
+    display: flex;
+    border-radius: 10px;
+}
+.totals .left .left {
+    width:30%;
+    height: 50%;
+    font-size: 40px;
+    color: #0a84ff;
+    background-color: #90dacb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .8;
+    border-radius: 12%;
+}
+.totals .left .mid {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    min-width:50%;
+    height: 100%;
+    padding-left: 5%;
+    font-weight: 500;
+    font-size: 30px;
+}
+.totals .left .right {
+    min-width: 20%; 
+    padding-left: 15px;
+    min-height: 100%;
+    font-size: 40px;
+    color: #0a84ff;
+}   
+
+
+
+
+.totals > .right {
+    flex: 1;
+    background-color: rgb(253, 248, 248);
+    border-radius: 10px;
+    display: flex;
+    font-size: 50px;
+}
+
+/* .second {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: mi-content;
+} */
+.second {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+}
+
+.second > .recent {
+    width: 51.5%;
+    border-radius: 10px;
+    background-color: rgb(253, 248, 248);
+    display:flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.recent > .ordHead , .adminManagement > .adminHead {
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+ .recent >.ordHead > button  {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 0;
+    color: #606a79;
+    border-radius: 8px;
+    cursor: pointer;
+ }
+ .recent > table {
+    width: 100%;
+    border-collapse: collapse;
+    opacity: .7;
+}
+.recent > table > thead , .adminManagement> table > thead {
+    background-color: #f1f1f1;
+    padding: 12px;
+}
+.recent > table > tbody> tr, td , .adminManagement > table > tbody > tr,td {
+    padding: 15px;
+    vertical-align: middle;
+    
+}
+.status {
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    display: block;
+    padding: 12px 15px;
+    background-color: orange;
+    color: white;
+}
+
+.status.pending {
+    background-color: #ff9800; 
+}
+
+.status.completed {
+    background-color    : #4caf50; 
+}
+
+.status.cancelled {
+    background-color: #f44336; 
+}
+.second > .adminManagement {
+    width: 47%;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: rgb(253, 248, 248);
+    display: flex;
+    flex-direction: column;
+}
+/* .second > .adminManagement {
+   width: 47%;
+   height: 100%;
+   border-radius: 10px;
+   padding: 12px;
+   background-color: rgb(253, 248, 248);
+} */
+.view-btn {      
+    border-radius: 12px;
+    padding: 12px 15px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: rgb(39, 37, 179);
+    color: white;
+    cursor: pointer;
+}
+.adminManagement > .adminHead >button {
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #1e5c99;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+.second > .adminManagement > table {
+    width: 100%;
+    border-collapse: collapse;
+    opacity: .7;
+
+}
+.adminManagement  i {
+    cursor: pointer;
+}
