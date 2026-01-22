@@ -1,0 +1,40 @@
+/*  */
+/* تأكدي إن الاسم هنا هو نفس الـ id اللي في الـ HTML */
+#productsContainer {
+    display: grid !important; /* كلمة important بتضمن إن مفيش كود تاني يلغيه */
+    /* السطر اللي جاي هو المسؤول عن رصهم جنب بعض */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; /* المسافة بين المنتجات */
+    padding: 20px;
+    width: 90%; /* سيب مساحة بسيطة من الجوانب */
+    margin: 0 auto;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain; /* عشان الصورة متتقصش وتفضل بشكلها الأصلي */
+    margin-bottom: 10px;
+}
+.details-layout {
+    display: flex;
+    gap: 40px;
+    padding: 50px;
+    align-items: center;
+}
+.main-img {
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+}
+.text-info h1 { font-size: 2.5rem; }
+.price { color: green; font-size: 1.5rem; font-weight: bold; }
