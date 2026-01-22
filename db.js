@@ -11,11 +11,8 @@ const firebaseConfig = {
   appId: "1:994107550649:web:ae881a0ae7b04e2bef6468"
 };
 
-// 1. تفعيل التطبيق
 const app = initializeApp(firebaseConfig);
 
-// 2. تفعيل قاعدة البيانات مع ربطها بالتطبيق (ده اللي كان ناقص)
 const db = getDatabase(app);
 
-// 3. التصدير
 export { db, ref, set,onValue, push, get, child };

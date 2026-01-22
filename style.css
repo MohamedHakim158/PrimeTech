@@ -1,12 +1,10 @@
-/*  */
-/* تأكدي إن الاسم هنا هو نفس الـ id اللي في الـ HTML */
+
 #productsContainer {
-    display: grid !important; /* كلمة important بتضمن إن مفيش كود تاني يلغيه */
-    /* السطر اللي جاي هو المسؤول عن رصهم جنب بعض */
+    display: grid !important; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 20px; /* المسافة بين المنتجات */
+    gap: 20px;
     padding: 20px;
-    width: 90%; /* سيب مساحة بسيطة من الجوانب */
+    width: 90%; 
     margin: 0 auto;
 }
 
@@ -22,7 +20,7 @@
 .product-card img {
     width: 100%;
     height: 180px;
-    object-fit: contain; /* عشان الصورة متتقصش وتفضل بشكلها الأصلي */
+    object-fit: contain; 
     margin-bottom: 10px;
 }
 .details-layout {

@@ -1,6 +1,6 @@
 import { db, ref, onValue } from "./db.js";
 
-// 1. قراءة الـ ID من الرابط (URL)
+
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
 
@@ -8,7 +8,7 @@ const detailsContainer = document.getElementById("productDetails");
 
 
 if (productId) {
-    // 2. سحب بيانات المنتج ده بالذات من الفايربيز
+   
     const productRef = ref(db, `products/${productId}`);
     
     onValue(productRef, (snapshot) => {
