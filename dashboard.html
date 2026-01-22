@@ -10,7 +10,7 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 />
-<script src="script.js"></script>
+<script src="script.js" type="module"></script>
 
 </head>
 <body>
@@ -55,11 +55,25 @@
                 </div>
                 <div class="mid">
                     <div class="left"><i class='fas fa-cart-arrow-down'></i></div>
-                    <div class="mid"></div>
-                    <div class="right"></div>
+                    <div class="mid">
+                        <p>Orders</p>
+                        <p class="ordersCount">45</p>
+                    </div>
+                    <div class="right"><i class="fa-solid fa-ranking-star" style="color: #74C0FC;"></i></div>
                 </div>
                 <div class="right">
-                    <div class="left"><i class="fa-solid fa-sack-dollar"></i></div>
+                        <div class="upper">
+                            <div class="left"><i class="fa-solid fa-sack-dollar"></i></div>
+                            <div class="mid">
+                                <p>Revenue</p>
+                                <p class="opa">Revenue all-time</p>
+                            </div>
+                            <div class="right">
+                                <p class="totalMoney">52,300</p>
+                                <p>EGP</p>
+                            </div>
+                        </div>    
+                        <div class="lower"></div>                
                 </div>
                </section>
 
@@ -69,7 +83,7 @@
                             <p>Recent Orders</p>
                             <button type="button">View All &nbsp;></button>
                         </header>
-                        <table >
+                        <table class="recTable">
                             <thead>
                                <tr >
                                  <td>Id</td>
@@ -117,7 +131,7 @@
                             <p>Admin Mangement</p>
                             <button type="button">Add New Admin</button>
                         </header>
-                        <table >
+                        <table  >
                             <thead>
                                <tr >
                                  <td>Admin</td>
@@ -149,6 +163,94 @@
                             </tbody>
                         </table>
                     </div>
+               </section>
+               <section class="prodManagment">
+                <header class="prodHead">
+                            <p>Product Management</p>
+                            <button type="button">View All &nbsp;></button>
+                </header>
+                <table class="prodTable" cellpadding="10" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="col-image">Image</th>
+                            <th class="col-name">Name</th>
+                            <th class="col-cat">Category</th>
+                            <th class="col-price">Price</th>
+                            <th class="col-stock">
+                                Stock
+                                <i class="fa-solid fa-caret-up" style="cursor:pointer;"></i>
+                                <i class="fa-solid fa-caret-down" style="cursor:pointer;"></i>
+                            </th>
+                            <th >Action</th>
+                            <th >Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="col-image">
+                                <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04" width="50">
+                            </td>
+                            <td class="col-name">Product 1</td>
+                            <td class="col-cat">Category A</td>
+                            <td class="col-price">$50</td>
+                            <td class="col-stock">30</td>
+                            <td class="col-action1">
+                                <button><i class="fa-solid fa-pen"></i> Edit</button>
+                            </td>
+                            <td class="col-action2">
+                                <button ><i class="fa-solid fa-trash"></i>Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" width="50"></td>
+                            <td class="col-name">Product 2</td>
+                            <td>Category B</td>
+                            <td>$70</td>
+                            <td>18</td>
+                            <td class="col-action1"><button><i class="fa-solid fa-pen"></i> Edit</button></td>
+                            <td class="col-action2"><button ><i class="fa-solid fa-trash"></i>Delete</button></td>
+                        </tr>
+
+                        <tr>
+                            <td><img src="https://images.unsplash.com/photo-1527430253228-e93688616381" width="50"></td>
+                            <td class="col-name">Product 3</td>
+                            <td>Category C</td>
+                            <td>$90</td>
+                            <td>42</td>
+                            <td class="col-action1"><button><i class="fa-solid fa-pen"></i> Edit</button></td>
+                            <td class="col-action2"><button ><i class="fa-solid fa-trash"></i>Delete</button></td>
+                        </tr>
+
+                        <tr>
+                            <td><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8" width="50"></td>
+                            <td class="col-name">Product 4</td>
+                            <td>Category A</td>
+                            <td>$120</td>
+                            <td>10</td>
+                            <td class="col-action1"><button><i class="fa-solid fa-pen"></i> Edit</button></td>
+                            <td class="col-action2"><button ><i class="fa-solid fa-trash"></i>Delete</button></td>
+                        </tr>
+
+                        <!-- Pagination Row -->
+                        <tr>
+                            <td colspan="5"></td>
+                            <td colspan="2" style="text-align:center;">
+                                <span class="previous">&lt;&lt;</span>
+                                <span class="Pagination">1</span>
+                                <span class="Pagination">2</span>
+                                <span class="Pagination">3</span>
+                                <span class="Pagination">4</span>
+                                <span class="Pagination">5</span>
+                                <span class="last">last</span>
+                                <span class="next">&gt;&gt;</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
                </section>
             </article>
         </aside>

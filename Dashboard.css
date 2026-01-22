@@ -39,6 +39,7 @@ main {
   font-family: "Segoe UI", sans-serif;
   position: relative;
   cursor: pointer;
+  background-color: black;
 }
 
 .primetech-logo span {
@@ -210,16 +211,68 @@ main {
     font-size: 40px;
     color: #0a84ff;
 }   
-
-
-
+.totals > .mid {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+}
+.totals>.mid > .left {
+    font-size: 30px;
+    color: orange;
+    background-color: #e9d5b7;
+    height:50%;
+}
+.totals > .mid> .mid {
+    display: flex;
+    font-weight: 600;
+    flex-direction: column;
+    font-size: 30px;
+}
 
 .totals > .right {
     flex: 1;
     background-color: rgb(253, 248, 248);
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
+}
+.totals > .right > .upper {
+    display: flex;
+    justify-content: space-around;
+    height: 75%;
+    padding: 10px;
+}
+.totals > .right > .upper > .left{
     font-size: 50px;
+    background-color: rgba(37, 168, 42, 0.5);
+    color: #12b818;
+    height: 80%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.totals > .right > .upper > .mid {
+    display:  flex;
+    flex-direction: column;
+    font-size: 30px;
+    opacity: 1;
+}
+.totals > .right > .upper > .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
+    font-size: 30px;
+}
+.opa {
+    opacity: .7;
+    font-size: 20px;
+}
+.totals > .right > .lower  {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to left, green 0%, white 100%);
 }
 
 /* .second {
@@ -268,9 +321,12 @@ main {
  .recent > table {
     width: 100%;
     border-collapse: collapse;
-    opacity: .7;
 }
-.recent > table > thead , .adminManagement> table > thead {
+.recent >.recTable th:nth-child(-n+3),
+.recent>.recTable td:nth-child(-n+3) {
+    opacity: 0.7; 
+}
+.recent > table > thead , .adminManagement> table > thead  , .prodManagment{
     background-color: #f1f1f1;
     padding: 12px;
 }
@@ -315,16 +371,16 @@ main {
    padding: 12px;
    background-color: rgb(253, 248, 248);
 } */
-.view-btn {      
-    border-radius: 12px;
-    padding: 12px 15px;
-    font-size: 12px;
-    font-weight: 600;
-    background-color: rgb(39, 37, 179);
-    color: white;
-    cursor: pointer;
+ .view-btn {      
+   padding: 10px 20px 10px 20px;
+   border-radius: 5px;
+   border: 0;
+   font-weight: 600;
+   color: white;
+   background-color: #1e5c99;
+   cursor: pointer;
 }
-.adminManagement > .adminHead >button {
+.adminManagement > .adminHead >button  , .prodManagment > .prodHead > button{
     padding: 12px;
     border-radius: 6px;
     background-color: #1e5c99;
@@ -342,3 +398,87 @@ main {
 .adminManagement  i {
     cursor: pointer;
 }
+
+.prodManagment {
+    width: 100%;
+    height: max-content;
+    background-color: rgb(253, 248, 248);
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.prodManagment > .prodHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.prodManagment > .prodTable {
+    width: 100%;
+    padding: 10px;
+    border-collapse: collapse   ;
+}
+.prodTable > thead {
+    background-color: #f1f1f1;
+    opacity: .7;
+}
+.prodHead > tbody >  tr , td {
+    padding: 10px;
+}
+ .prodManagment > .prodTable th:nth-child(n),
+ .prodManagment > .prodTable td:nth-child(n+2):nth-child(-n+5) {
+    opacity: 0.7;
+}
+
+.Pagination {
+    cursor: pointer;
+    padding: 5px;
+}
+.Pagination:hover {
+    color: #0a84ff;
+}
+.prodhead > th, td {
+    text-align: left;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.col-image { width: 8%; }
+.col-name  { width: 30%; } 
+.col-cat   { width: 15%; }
+.col-price { width: 10%; }
+.col-stock { width: 12%; }
+.col-action1{ width: 12%; }
+.col-action2{ 
+    width: 12%; 
+}
+.col-action1 > button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    padding: 10px;
+    border: 0;
+    background-color:#1e5c99;
+    color: white;
+    border-radius: 10%;
+    cursor: pointer;
+}
+.col-action2> button , .col-action2> button > i {
+    border: 0;
+    padding-left: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+    font-weight: 600;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+
