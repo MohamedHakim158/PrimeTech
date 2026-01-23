@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+   background-color: #F4F4F4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #005461;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+ h1 {
+    font-size: 28px;
+    color: #005461;
+    font-weight: 600;
+}
+
+.con {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input input, .input textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #005461;
+    resize: vertical;
+}
+
+.input input:focus, .input textarea:focus {
+    outline: 2px solid #00B7B5;
+    background-color: white;
+}
+
+.input textarea {
+    min-height: 80px;
+    font-family: Arial, sans-serif;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #00B7B5;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.checkbox input {
+    width: 16px;
+    height: 16px;
+    accent-color: #00B7B5;
+}
+
+.btn-register {
+    width: 100%;
+    padding: 14px;
+    background-color: #018790;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-register:hover {
+    background-color: #005461;
+}
+
+.login-link {
+    margin-top: 15px;
+}
+
+.login-link a {
+   color: #005461;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 16px;
+    border: 1px solid rgb(0, 97, 104);
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.login-link a:hover {
+    background-color:rgb(0, 183, 181);
+    border-color: #00B7B5;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 15px;
+    color: rgb(0, 183, 181);
+}
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Store - Register</title>
+    <link rel="icon" type="image/jpg" href="./Images/logoE-commerce.jpg">
+    <link rel="stylesheet" href="CSS/register.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+</head>
+<body>
+     <div class="container">
+        <div class="header">
+            <h1>CREATE NEW ACCOUNT</h1>
+        </div>
+        
+        <div class="con">
+            <div class="input">
+                <input type="text" id="name" placeholder="Full Name" required>
+            </div>
+            
+            <div class="input">
+                <input type="email" id="email" placeholder="Gmail Address" required>
+            </div>
+            
+            <div class="input">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            
+            <div class="input">
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            </div>
+            
+            <div class="input">
+                <textarea id="address" placeholder="Full Address (Street, City, Country)" rows="3" required></textarea>
+            </div>
+            
+            <div class="checkbox">
+                <input type="checkbox" id="terms">
+                <label>I agree to the Terms & Conditions</label>
+            </div>
+            
+            <button class="btn-register" id="register-btn">Register Now</button>
+            
+            <div class="login-link">
+                <a href="login.html">Already have an account? Login here</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Copyright&copy; All Rights Reserved 2026</p>
+        </div>
+        
+        <div id="loading" style="display: none; color: #0ed6b2; margin-top: 10px;">
+            Creating account...
+        </div>
+        
+        <div id="error-message" style="display: none;"></div>
+        
+        <div id="success-message" style="display: none;"></div>
+    </div>
+    <script src="JS/firebase-config.js"></script>
+    <script src="JS/register.js"></script>
+</body>
+</html>

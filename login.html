@@ -3,14 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tech Store - Login</title>
+    <link rel="icon" type="image/jpg" href="./Images/logoE-commerce.jpg">
+    <link rel="stylesheet" href="CSS/login.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
 </head>
 <body>
-    
+     <div class="container">
+        <div class="header">
+            <h1>LOG IN TO ENTER</h1>
+        </div>
+        
+        <div class="con">
+            <div class="input">
+                <input type="email" id="email" placeholder="Enter your Gmail " required>
+            </div>
+            
+            <div class="input">
+                <input type="password" id="password" placeholder="Enter your Password" required>
+            </div>
+            
+            <div class="checkbox">
+                <input type="checkbox" id="keep-logged">
+                <label>Keep ME Logged in</label>
+            </div>
+            
+            <button class="btn btn-login" id="login-btn">Login</button>
+            
+            <div class="forgot-password">
+                <a href="#" id="forgot-pass">Forgot Password?</a>
+            </div>
+            
+            <div class="register-link">
+                <a href="register.html">Create a new account</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Copyright&copy; All Rights Reserved 2026</p>
+        </div>
+        
 
+        <div id="loading" style="display: none; color: #4bc5b5; margin-top: 10px;">
+            Loading...
+        </div>
+ 
+        <div id="error-message" style="display: none;"></div>
+        
+ 
+        <div id="success-message" style="display: none;"></div>
+    </div>
 
-    <script>
-        alert("welcome to login page")
-    </script>
+    <script src="JS/firebase-config.js"></script>
+    <script src="JS/login.js"></script>
 </body>
 </html>
