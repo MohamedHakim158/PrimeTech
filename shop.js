@@ -72,4 +72,4 @@ searchInput.addEventListener('input', (e) => {
 });
 window.goToDetails = (id) => {
     window.location.href = `product-details.html?id=${id}`;
-} ;
+};
