@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PrimeTech | Home</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="shop-container">
-    <header>
-        <h1>E-COMMERCE 🛍️</h1>
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="search...">
+
+    <nav class="navbar">
+        <div class="logo">Prime<span>Tech</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Cart</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Upgrade Your Lifestyle</h1>
+            <p>Discover the latest in Electronics, Mobiles, and Home Appliances.</p>
+            <a href="#productsContainer" class="cta-btn">Shop Now</a>
         </div>
-        <button id="cartBtn">cart (0)</button>
     </header>
 
-    <main id="productsContainer" class="products-grid">
-        </main>
-</div>
-<script type="module" src="shop.js"></script>
+    <section class="shop-container">
+        <h2 class="section-title">Our Featured Products</h2>
+        <div id="productsContainer" class="products-grid">
+            </div>
+    </section>
+
+    <script type="module" src="shop.js"></script>
 </body>
 </html>
