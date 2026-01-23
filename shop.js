@@ -4,6 +4,8 @@ const container = document.getElementById("productsContainer");
 const searchInput = document.getElementById("searchInput");
 let allProducts = []; 
 
+
+
 onValue(ref(db, 'products'), (snapshot) => {
     const data = snapshot.val();
     if (data) {
@@ -12,6 +14,7 @@ onValue(ref(db, 'products'), (snapshot) => {
             id: id,
             ...data[id]
         }));
+        debugger
         renderProducts(allProducts); 
     } else {
         container.innerHTML = "<h2>NO PRODUCTS </h2>";
@@ -20,6 +23,7 @@ onValue(ref(db, 'products'), (snapshot) => {
 
 
 function renderProducts(productsList) {
+    
     container.innerHTML = ""; 
     productsList.forEach(product => {
      container.innerHTML += `
