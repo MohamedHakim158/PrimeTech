@@ -46,7 +46,6 @@ onValue(productsRef, (snapshot) => {
 });
 
 
-<<<<<<< HEAD
 function renderProducts(productsList) {
     
     container.innerHTML = ""; 
@@ -71,8 +70,6 @@ searchInput.addEventListener('input', (e) => {
     );
     renderProducts(filtered);
 });
-=======
->>>>>>> d1d4b03cce1f7c9c43769989dcc5b6a21e239a5e
 window.goToDetails = (id) => {
     window.location.href = `product-details.html?id=${id}`;
-};
+} ;
