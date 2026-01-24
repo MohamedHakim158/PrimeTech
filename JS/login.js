@@ -78,6 +78,7 @@ function loginUser() {
        
             setTimeout(() => {
                 window.location.href = "../shop.html";
+
             }, 2000);
         })
         .catch((error) => {

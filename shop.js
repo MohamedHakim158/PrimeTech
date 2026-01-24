@@ -1,42 +1,45 @@
-
 import { db, ref, onValue } from "./db.js";
 
 const container = document.getElementById("productsContainer");
+const searchInput = document.getElementById("searchInput"); 
+let allProducts = []; 
 
-
-const productsRef = ref(db, 'products'); 
-
-onValue(productsRef, (snapshot) => {
+onValue(ref(db, 'products'), (snapshot) => {
     const data = snapshot.val();
-    console.log("البيانات وصلت بنجاح:", data);
-
     if (data) {
-        container.innerHTML = ""; 
-        
-  
-        Object.keys(data).forEach(key => {
-            const p = data[key];
-
-            container.innerHTML += `
-                <div class="product-card">
-                    <img src="${p.img}">
-                    <h3>${p.name}</h3>
-                    <div class="product-info">
-                        <span class="price">${p.price} EGP</span>
-                        <span class="stock">Stock: ${p.stock_quantity}</span>
-                    </div>
-                    <button class="view-btn" onclick="goToDetails('${key}')">View Product</button>
-                </div>
-            `;
-        });
-    } else {
-        container.innerHTML = "<h2>لا توجد بيانات في مسار products</h2>";
+        allProducts = Object.keys(data).map(id => ({ id, ...data[id] }));
+        renderProducts(allProducts); 
     }
-}, (error) => {
-    console.error("Firebase Error:", error);
 });
 
+function renderProducts(productsList) {
+    container.innerHTML = ""; 
+    productsList.forEach(p => {
+        // اطبعي الـ ID في الكونسول عشان تشوفي بنفسك هو 1 ولا الكود الطويل
+        console.log("Current Product ID:", p.id); 
 
+        container.innerHTML += `
+            <div class="product-card">
+                <img src="${p.img}">
+                <h3>${p.name}</h3>
+                <p>${p.price} EGP</p>
+                <button class="view-btn" onclick="goToDetails('${p.id}')">View Product</button>
+            </div>
+        `;
+    });
+}
+
+
+// حل مشكلة الـ Search: لا يعمل إلا إذا وجد العنصر
+if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        const filtered = allProducts.filter(p => p.name.toLowerCase().includes(term));
+        renderProducts(filtered);
+    });
+}
+
+// حل مشكلة الزرار: جعل الدالة Global
 window.goToDetails = (id) => {
     window.location.href = `product-details.html?id=${id}`;
 };

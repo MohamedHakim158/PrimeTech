@@ -1,37 +1,36 @@
 import { db, ref, onValue } from "./db.js";
 
 const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('id'); 
-const container = document.getElementById("productDetailContent");
+const productId = urlParams.get('id');
+const detailsContainer = document.getElementById("productDetailContent");
 
 if (productId) {
-   
-    const productRef = ref(db, `products/${productId}`);
-    
+    // التأكد من المسار الصحيح في الفايربيز
+    const productRef = ref(db, 'products/' + productId);
+
     onValue(productRef, (snapshot) => {
-        const p = snapshot.val();
-        if (snapshot.exists()) {
+        const data = snapshot.val();
         
-            container.innerHTML = `
-                <div class="detail-image">
-                    <img src="${p.img}" alt="${p.name}">
-                </div>
-                <div class="detail-info">
-                    <span class="category-tag">${p.catetory}</span>
-                    <h1>${p.name}</h1>
-                    <p class="full-description">${p.description}</p>
-                    <div class="price-section">
-                        <span class="detail-price">${p.price} EGP</span>
-                        <span class="detail-stock">Available: ${p.stock_quantity}</span>
+        if (data) {
+            // عرض البيانات مع التأكد من أسماء الحقول (img, name, price)
+            detailsContainer.innerHTML = `
+                <div class="product-detail-card" style="display: flex; gap: 20px; padding: 20px;">
+                    <div class="detail-img">
+                        <img src="${data.img || data.image}" style="max-width: 400px; border-radius: 10px;">
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
-                    <button class="back-btn" onclick="history.back()">Back to Shop</button>
+                    <div class="detail-info">
+                        <h1 style="color: #4bc5b5;">${data.name}</h1>
+                        <p style="font-size: 1.5rem; font-weight: bold;">${data.price} EGP</p>
+                        <p style="margin: 20px 0;">${data.description || "No description available for this product."}</p>
+                        <p><strong>Stock Quantity:</strong> ${data.stock_quantity || 'N/A'}</p>
+                        <button onclick="location.href='shop.html'" style="padding: 10px 20px; cursor: pointer;">Back to Shop</button>
+                    </div>
                 </div>
             `;
         } else {
-            container.innerHTML = "<h2>Product not found!</h2>";
+            detailsContainer.innerHTML = `<h2>Product Not Found!</h2><p>ID: ${productId}</p>`;
         }
     });
 } else {
-    container.innerHTML = "<h2>No product selected!</h2>";
+    detailsContainer.innerHTML = "<h2>Please select a product from the shop.</h2>";
 }

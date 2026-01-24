@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+
     <link rel="stylesheet" href="./Dashboard.css">
+
     <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon">
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 />
-<script src="script.js" type="module"></script>
 
 </head>
 <body>
@@ -186,8 +187,8 @@
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <tr>
+                    <tbody id="prodContainer">
+                        <!-- <tr>
                             <td class="col-image">
                                 <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04" width="50">
                             </td>
@@ -231,29 +232,29 @@
                             <td>10</td>
                             <td class="col-action1"><button><i class="fa-solid fa-pen"></i> Edit</button></td>
                             <td class="col-action2"><button ><i class="fa-solid fa-trash"></i>Delete</button></td>
-                        </tr>
+                        </tr> -->
 
-                        <!-- Pagination Row -->
+                        
+                        
+                    </tbody>
+                    <tfoot>
                         <tr>
-                            <td colspan="5"></td>
-                            <td colspan="2" style="text-align:center;">
-                                <span class="previous">&lt;&lt;</span>
-                                <span class="Pagination">1</span>
-                                <span class="Pagination">2</span>
-                                <span class="Pagination">3</span>
-                                <span class="Pagination">4</span>
-                                <span class="Pagination">5</span>
-                                <span class="last">last</span>
-                                <span class="next">&gt;&gt;</span>
+                            <td colspan="6"></td>
+                                <!-- Pagination Row -->
+                                <td><div id="pagination" class="pagination"></div>
                             </td>
                         </tr>
-                    </tbody>
+                    </tfoot>
 
                 </table>
+                
 
                </section>
             </article>
         </aside>
+        
+                    
+        </div>
     </main>
 
 
@@ -275,5 +276,6 @@
             }
         });
     </script>
+    <script  type="module" src="dashboard.js"></script>
 </body>
 </html>
