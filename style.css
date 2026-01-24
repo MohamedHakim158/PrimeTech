@@ -244,3 +244,79 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* بيوزع الـ 3 أجزاء بالعرض */
+    padding: 25px 5%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    gap: 20px; /* مسافة بين العناصر */
+}
+
+/* اللوجو */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap; /* يمنع اللوجو ينزل تحت بعضه */
+}
+
+/* شريط البحث (اللي في النص) */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 50px; /* خليه بيضاوي شوية عشان يبقى مودرن */
+    padding: 5px 20px;
+    flex: 1; /* يخليه ياخد المساحة المتاحة في النص */
+    max-width: 500px; /* أقصى عرض للسيرش */
+    height: 40px;
+}
+
+.category-dropdown {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.divider {
+    width: 1px;
+    height: 15px;
+    background-color: #ccc;
+    margin: 0 10px;
+}
+
+#searchInput {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+}
+
+/* اللينكات */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+.cart-link {
+    position: relative;
+    font-size: 25px; /* حجم السلة */
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cart-link:hover {
+    color: #4bc5b5; /* لون لما تلمسيها بالماوس */
+}
+
