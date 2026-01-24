@@ -4,42 +4,50 @@ const container = document.getElementById("productsContainer");
 const searchInput = document.getElementById("searchInput"); 
 let allProducts = []; 
 
+// 1. جلب البيانات من الفايربيز
 onValue(ref(db, 'products'), (snapshot) => {
     const data = snapshot.val();
     if (data) {
-        allProducts = Object.keys(data).map(id => ({ id, ...data[id] }));
+        // نستخدم Object.entries للحصول على المفتاح (p0) واستخدامه كـ id
+        
+        allProducts = Object.entries(data).map(([key, value]) => ({ 
+        id: key, // ده اللي هيخلي الـ id يبقى p0
+        ...value 
+    }));
         renderProducts(allProducts); 
     }
 });
 
+// 2. دالة عرض المنتجات في الصفحة
 function renderProducts(productsList) {
     container.innerHTML = ""; 
     productsList.forEach(p => {
-        // اطبعي الـ ID في الكونسول عشان تشوفي بنفسك هو 1 ولا الكود الطويل
-        console.log("Current Product ID:", p.id); 
-
         container.innerHTML += `
             <div class="product-card">
-                <img src="${p.img}">
+                <img src="${p.img || p.image}" alt="${p.name}">
                 <h3>${p.name}</h3>
-                <p>${p.price} EGP</p>
+                <p class="price">${p.price} EGP</p>
                 <button class="view-btn" onclick="goToDetails('${p.id}')">View Product</button>
             </div>
         `;
     });
 }
 
-
-// حل مشكلة الـ Search: لا يعمل إلا إذا وجد العنصر
+// 3. دالة البحث (تعمل فقط في حالة وجود مربع البحث)
 if (searchInput) {
     searchInput.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
-        const filtered = allProducts.filter(p => p.name.toLowerCase().includes(term));
+        const filtered = allProducts.filter(p => 
+            p.name.toLowerCase().includes(term) || 
+            (p.category && p.category.toLowerCase().includes(term))
+        );
         renderProducts(filtered);
     });
 }
 
-// حل مشكلة الزرار: جعل الدالة Global
+// 4. دالة الانتقال لصفحة التفاصيل (جعلها Global)
 window.goToDetails = (id) => {
+    // سيقوم بفتح الرابط بالشكل التالي: product-details.html?id=p0
     window.location.href = `product-details.html?id=${id}`;
+
 };
