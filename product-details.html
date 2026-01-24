@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo" onclick="location.href='shop.html'" style="cursor:pointer">Prime<span>Tech</span></div>
+    </nav>
+
     <div class="details-container">
-    <div id="productDetails" class="product-info">
+        <div id="productDetailContent" class="product-detail-flex">
+            <p>Loading details...</p>
         </div>
-    <button onclick="window.history.back()">back</button>
-</div>
+    </div>
 
-
-<script type="module" src="details.js"></script>
+    <script type="module" src="product-details.js"></script>
 </body>
 </html>
