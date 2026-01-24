@@ -77,7 +77,7 @@ function loginUser() {
             
        
             setTimeout(() => {
-                window.location.href = 'home.html'
+                window.location.href = "../shop.html";
             }, 2000);
         })
         .catch((error) => {
