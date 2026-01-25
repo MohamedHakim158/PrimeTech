@@ -5,20 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrimeTech | Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">Prime<span>Tech</span></div>
-        <ul class="nav-links">
-            
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Cart</a></li>
-            <input type="text" id="searchInput" placeholder="Search for products...">
-        </ul>
-    </nav>
+ <nav class="navbar">
+    <div class="logo" onclick="location.href='shop.html'">Prime<span>Tech</span></div>
+
+    <div class="search-wrapper">
+        <select id="categorySelect" class="category-dropdown">
+            <option value="all">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="laptops">Laptops</option>
+        </select>
+        <div class="divider"></div>
+        <input type="text" id="searchInput" placeholder="Search for Products">
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="shop.html">Home</a></li>
+        <li>
+    <a href="cart.html" class="cart-link">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-count"></span> </a>
+</li>
+    </ul>
+</nav>
 
     <header class="hero">
         <div class="hero-content">
