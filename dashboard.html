@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-
-    <link rel="stylesheet" href="./Dashboard.css">
-
+    <link rel="stylesheet" href="Dashboard.css">
     <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon">
 <link
   rel="stylesheet"
@@ -179,8 +177,8 @@
                             <th class="col-price">Price</th>
                             <th class="col-stock">
                                 Stock
-                                <i class="fa-solid fa-caret-up" style="cursor:pointer;"></i>
-                                <i class="fa-solid fa-caret-down" style="cursor:pointer;"></i>
+                                <i class="fa-solid fa-caret-up" style="cursor:pointer;" id="OrderProductAsc"></i>
+                                <i class="fa-solid fa-caret-down" style="cursor:pointer;" id="OrderProductDesc"></i>
                             </th>
                             <th >Action</th>
                             <th >Action</th>
@@ -252,9 +250,10 @@
                </section>
             </article>
         </aside>
+
         
-                    
-        </div>
+        <!-- Modal -->
+        <div id="editModal" class="modal"></div>
     </main>
 
 

@@ -501,29 +501,48 @@ main {
     /* eidt content popUp window styling  */
 
 .modal {
-  display: block; 
+  display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
 }
 
-.modal-content {
+.modal-box {
   background: #fff;
   padding: 20px;
-  width: 300px;
+  width: 30%;
   margin: 15% auto;
   border-radius: 6px;
 }
+.modal-box > .line {
+    display: flex;
+    gap:5px;
+    
+}
+.modal-box > .line > input , .modal-box > .lineImage > input {
+    padding: 10px;
+    width: 60%;
+    border: none;
+}
+.modal-box > .lineImage {
+    display: flex;
+    flex-direction: column;
+}
 
-.actions {
+.modal-box > .modal-actions {
+  display: flex;
+  justify-content: center;
+  gap:5px;
   margin-top: 15px;
   text-align: right;
 }
-
-label {
-  display: block;
-  margin-bottom: 10px;
+.modal-box > .modal-actions > button {
+    padding: 5px;
 }
+
+
 
 
 
